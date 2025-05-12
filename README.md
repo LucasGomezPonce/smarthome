@@ -1,10 +1,10 @@
-# 🏡 SmartHome Solutions – Sistema Básico de Gestión de Dispositivos
+#  SmartHome Solutions – Sistema Básico de Gestión de Dispositivos
 
 Este proyecto es una simulación de un sistema para la gestión de dispositivos inteligentes dentro del hogar. El objetivo es desarrollar funcionalidades básicas en consola utilizando programación orientada a objetos y estructuras de datos (diccionarios y listas), en colaboración entre distintos integrantes del equipo.
 
 ---
 
-## 👥 División de Tareas
+##  División de Tareas
 
 ### 🔹 Lucas – Menú principal y listado de dispositivos
 - Diseña e implementa un menú interactivo para que el usuario pueda acceder a las diferentes funciones del sistema.
@@ -33,7 +33,4 @@ Este proyecto es una simulación de un sistema para la gestión de dispositivos 
 
 ---
 
-## 🛠️ Requisitos Técnicos
-- Lenguaje: Python 3
-- Almacenamiento de dispositivos: lista de diccionarios
 
