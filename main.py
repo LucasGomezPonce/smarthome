@@ -1,4 +1,5 @@
 from dispositivos import listar_dispositivos
+from dispositivos import eliminar_dispositivos
 dispositivos = [
     {"id": 1, "nombre": "Luz living", "tipo": "no_esencial", "estado": "apagado"},
     {"id": 2, "nombre": "Televisor", "tipo": "no_esencial", "estado": "encendido"},

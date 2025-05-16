@@ -20,23 +20,20 @@ def buscar_dispositivo():
     # permite buscar un dispositivo por ID o nombre.
 
 
-def eliminar_dispositivos():
-    elim = input("Desea eliminar un dispositivo? (s/n): ")
-    
+def eliminar_dispositivos(dispositivos):
+    elim = input("Desea eliminar un dispositivo (s/n):")
+
     if elim.lower() == "s":
-        try:
             id_buscar = int(input("Ingrese el ID del dispositivo a eliminar: "))
-            for i, dispositivos in enumerate(dispositivos):
-                if dispositivos["id"] == id_buscar:
-                    del dispositivos[i]
+            for i, dispositivo in enumerate(dispositivos):
+                if dispositivo["id"] == id_buscar:
+                    del dispositivos[i]  
                     print("Dispositivo eliminado")
                     return dispositivos
-            print("No se encontró el dispositivo")
-        except ValueError:
-            print("Entrada inválida. Por favor, ingrese un número.")
+            print("No se encontro el dispositivo.")
     else:
-        print("No se eliminará ningún dispositivo")
+        print("No se elimina ningun dispositivo.")
     return dispositivos
-   
+
     # Valentino
     # elimina un dispositivo existente.
