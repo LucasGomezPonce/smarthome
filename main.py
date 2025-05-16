@@ -51,6 +51,7 @@ def gestionar_dispositivos():
             print("Funcion buscar dispositivo")
         elif op == "4":
             print("Funcion eliminar dispositivo")
+            eliminar_dispositivos(dispositivos)
         elif op == "5":
             menu()
         else:
