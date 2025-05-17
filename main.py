@@ -1,4 +1,4 @@
-from dispositivos import listar_dispositivos, eliminar_dispositivos,agregar_dispositivo
+from dispositivos import listar_dispositivos, eliminar_dispositivos,agregar_dispositivo,buscar_dispositivos
 from automatizacion import activar_modo_ahorro, reglas_de_automatizacion
 
 dispositivos = [
@@ -51,6 +51,7 @@ def gestionar_dispositivos():
 
         elif op == "3":
             print("Funcion buscar dispositivo")
+            buscar_dispositivos(dispositivos)
         elif op == "4":
             print("Funcion eliminar dispositivo")
             eliminar_dispositivos(dispositivos)
