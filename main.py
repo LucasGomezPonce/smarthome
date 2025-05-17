@@ -1,6 +1,4 @@
-from dispositivos import listar_dispositivos
-from dispositivos import eliminar_dispositivos
-from dispositivos import agregar_dispositivo
+from dispositivos import listar_dispositivos, eliminar_dispositivos,agregar_dispositivo
 
 dispositivos = [
     {"id": 1, "nombre": "Luz living", "tipo": "no_esencial", "estado": "apagado"},

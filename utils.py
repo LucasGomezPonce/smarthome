@@ -1,8 +1,9 @@
-from main import dispositivos
-
-
-def generar_id_dispositivo():
-    pass
+def generar_id_dispositivo(dispositivos):
+    
+    ultimo_id = dispositivos[-1]["id"] 
+    nuevo_id = ultimo_id + 1     
+    
+    return nuevo_id
 
 
 def mostrar_mensaje_error():

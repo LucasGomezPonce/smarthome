@@ -1,13 +1,11 @@
+from utils import generar_id_dispositivo
+
 def agregar_dispositivo(dispositivos):
 
     while True:
-
-        try: 
-            id = int(input("Ingrese un ID: "))
-        except ValueError:
-            print("Error. Debe ser un número entero.")
-            continue
-
+ 
+        id = generar_id_dispositivo(dispositivos)
+        
         nombre = input("Ingrese el nombre del nuevo dispositivo: ").lower()
         if nombre == "" :
             print("Error el nombre no puede estar vacio. ")
