@@ -44,11 +44,9 @@ def agregar_dispositivo(dispositivos):
     
     print("Nuevo dispositivo agregado: ")    
 
-    for dispositivo in dispositivos:
-        if dispositivo == dispositivos[-1]:
-            print(f"ID: {dispositivo['id']} - Nombre: {dispositivo['nombre']} - Tipo: {dispositivo['tipo']} - Estado: {dispositivo['estado']}")
-            break
-    
+    ultimo_dispositivo = dispositivos[-1]
+    print(f"ID: {ultimo_dispositivo['id']} - Nombre: {ultimo_dispositivo['nombre']} - Tipo: {ultimo_dispositivo['tipo']} - Estado: {ultimo_dispositivo['estado']}")
+       
     return dispositivos
     # Franco
     # solicita datos al usuario y agrega un nuevo dispositivo a la lista.
