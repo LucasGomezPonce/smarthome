@@ -1,5 +1,7 @@
 from dispositivos import listar_dispositivos
 from dispositivos import eliminar_dispositivos
+from dispositivos import agregar_dispositivo
+
 dispositivos = [
     {"id": 1, "nombre": "Luz living", "tipo": "no_esencial", "estado": "apagado"},
     {"id": 2, "nombre": "Televisor", "tipo": "no_esencial", "estado": "encendido"},
@@ -43,7 +45,7 @@ def gestionar_dispositivos():
 
         if op == "1":
             print("Funcion agregar dispositivos")
-            pass
+            agregar_dispositivo(dispositivos)
         elif op == "2":
             print("Funcion listar dispositivos\n")
             listar_dispositivos(dispositivos)
