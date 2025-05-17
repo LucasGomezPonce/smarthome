@@ -1,10 +1,21 @@
-def activar_modo_ahorro():
-    pass
+from utils import filtrar_lista
+from dispositivos import listar_dispositivos
+
+def activar_modo_ahorro(lista_dispositivos):
+    contador = 0
+    while contador in  range (len(lista_dispositivos)):
+        dispositivo = lista_dispositivos[contador]
+        if dispositivo["tipo"] == "no_esencial":
+            dispositivo["estado"] = "apagado"
+        contador += 1
+    print("\n Modo 'Ahorro de energia' Activado \n")
     #Octavio
     # apaga todos los dispositivos no esenciales.
     # O, si elegís otra automatización(por ejemplo, “modo noche”), una función que aplique esa lógica.
 
 
-def reglas_de_automatizacion():
-    pass
+def reglas_de_automatizacion(lista_dispositivos):
+    print ("\n al activar el modo 'Ahorro de Energia' se desactivaran los dispositivos  de tipo no escenciales:\n")
+    listar_dispositivos (filtrar_lista(lista_dispositivos, "tipo" , "no_esencial"))
+    #Octavio
     # indicar los dispositivos a apagarse 

@@ -1,4 +1,5 @@
 from dispositivos import listar_dispositivos, eliminar_dispositivos,agregar_dispositivo
+from automatizacion import activar_modo_ahorro, reglas_de_automatizacion
 
 dispositivos = [
     {"id": 1, "nombre": "Luz living", "tipo": "no_esencial", "estado": "apagado"},
@@ -66,9 +67,11 @@ def gestionar_automatizacion():
 
         if op == "1":
             print("Funcion modo ahorro de energia")
+            activar_modo_ahorro(dispositivos)
 
         elif op == "2":
             print("Reglas de automatización")
+            reglas_de_automatizacion(dispositivos)
 
         elif op == "3":
             menu()
