@@ -2,7 +2,7 @@ from utils import generar_id_dispositivo
 
 
 def agregar_dispositivo(dispositivos):
-
+    contador_agregado = 0
     while True:
 
         id = generar_id_dispositivo(dispositivos)
@@ -38,17 +38,20 @@ def agregar_dispositivo(dispositivos):
             "id": id, "nombre": nombre, "tipo": tipo, "estado": estado}
 
         dispositivos.append(dispositivo_agragado)
-
+        contador_agregado -= 1
         salida_bucle = input(
             "¿Desea agregar otro dispositivo?(SI/NO): ").lower()
+
         if salida_bucle == "no":
             break
-
-    print("Nuevo dispositivo agregado: ")
-
-    ultimo_dispositivo = dispositivos[-1]
-    print(
-        f"ID: {ultimo_dispositivo['id']} - Nombre: {ultimo_dispositivo['nombre']} - Tipo: {ultimo_dispositivo['tipo']} - Estado: {ultimo_dispositivo['estado']}")
+    if contador_agregado == -1:
+        print("Nuevo dispositivo agregado: ")
+    else:
+        print("Nuevos dispositivos agregados: ")
+    for i in range(contador_agregado, 0):
+        ultimo_dispositivo = dispositivos[i]
+        print(
+            f"ID: {ultimo_dispositivo['id']} - Nombre: {ultimo_dispositivo['nombre']} - Tipo: {ultimo_dispositivo['tipo']} - Estado: {ultimo_dispositivo['estado']}")
 
     return dispositivos
     # Franco
@@ -114,3 +117,9 @@ def eliminar_dispositivos(dispositivos):
 
     # Valentino
     # elimina un dispositivo existente.
+
+
+if __name__ == "__main__":
+    counta = -5
+    for i in range(-1, 0):
+        print(i)
