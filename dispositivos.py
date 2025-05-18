@@ -119,7 +119,3 @@ def eliminar_dispositivos(dispositivos):
     # elimina un dispositivo existente.
 
 
-if __name__ == "__main__":
-    counta = -5
-    for i in range(-1, 0):
-        print(i)
