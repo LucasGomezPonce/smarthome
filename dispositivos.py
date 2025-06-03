@@ -56,6 +56,7 @@ def agregar_dispositivo(dispositivos):
     return dispositivos
     # Franco
     # solicita datos al usuario y agrega un nuevo dispositivo a la lista.
+    # CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
 
 
 def listar_dispositivos(lista_dispositivos):
@@ -92,6 +93,7 @@ def buscar_dispositivos(dispositivos):
             f"\nNo fue encontrado ningún dispositivo que coincida con el id o nombre ingresado ({valor_buscado})")
     # Mauricio
     # permite buscar un dispositivo por ID o nombre.
+    # #CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
 
 
 def eliminar_dispositivos(dispositivos):
@@ -117,5 +119,4 @@ def eliminar_dispositivos(dispositivos):
 
     # Valentino
     # elimina un dispositivo existente.
-
-
+    # #CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
