@@ -41,5 +41,5 @@ def cambiar_rol_usuario():
 
 def obtener_usuario_por_nombre():
     # muestra datos del usuario, pasar datos como parametro
-    #SERGIO 
+    #OCTAVIO
     pass
