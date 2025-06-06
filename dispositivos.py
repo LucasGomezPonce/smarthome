@@ -34,10 +34,10 @@ def agregar_dispositivo(dispositivos):
             print("Error debe colocar (SI/NO): ")
             continue
 
-        dispositivo_agragado = {
+        dispositivo_agregado = {
             "id": id, "nombre": nombre, "tipo": tipo, "estado": estado}
 
-        dispositivos.append(dispositivo_agragado)
+        dispositivos.append(dispositivo_agregado)
         contador_agregado -= 1
         salida_bucle = input(
             "¿Desea agregar otro dispositivo?(SI/NO): ").lower()
