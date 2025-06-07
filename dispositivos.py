@@ -1,34 +1,45 @@
 from utils import generar_id_dispositivo
 
+def menu_agregar_dispositivo():
+    
+    nombre = input("Ingrese el nombre del nuevo dispositivo: ").lower().strip()
+
+    esencial = input("¿Es un dispositivo esencial?(SI/NO): ").lower().strip()
+
+    encendido = input("¿El dispositivo esta encendido?(SI/NO): ").lower().strip()
+
+    salida_bucle = input(
+            "¿Desea agregar otro dispositivo?(SI/NO): ").lower().strip()
+    
+    return nombre, esencial, encendido, salida_bucle
 
 def agregar_dispositivo(dispositivos):
     contador_agregado = 0
     while True:
 
+        nombre, esencial, encendido, salida_bucle = menu_agregar_dispositivo()
+
         id = generar_id_dispositivo(dispositivos)
 
-        nombre = input("Ingrese el nombre del nuevo dispositivo: ").lower()
         if nombre == "":
             print("Error el nombre no puede estar vacio. ")
             continue
 
-        elif nombre.isdigit():
+        if nombre.isdigit():
             print("Error ha ingreasdo un numero. ")
             continue
 
-        tipo_rta = input("¿Es un dispositivo esencial?(SI/NO): ").lower()
-        if tipo_rta == "si":
+        if esencial == "si":
             tipo = "esencial"
-        elif tipo_rta == "no":
+        elif esencial == "no":
             tipo = "no_esencial"
         else:
             print("Error debe colocar (SI/NO). ")
             continue
 
-        estado_rta = input("¿El dispositivo esta encendido?(SI/NO): ").lower()
-        if estado_rta == "si":
+        if encendido == "si":
             estado = "encendido"
-        elif estado_rta == "no":
+        elif encendido == "no":
             estado = "apagado"
         else:
             print("Error debe colocar (SI/NO): ")
@@ -38,22 +49,23 @@ def agregar_dispositivo(dispositivos):
             "id": id, "nombre": nombre, "tipo": tipo, "estado": estado}
 
         dispositivos.append(dispositivo_agregado)
-        contador_agregado -= 1
-        salida_bucle = input(
-            "¿Desea agregar otro dispositivo?(SI/NO): ").lower()
+        contador_agregado += 1
+        
 
         if salida_bucle == "no":
             break
-    if contador_agregado == -1:
+        if salida_bucle == "" :
+            break
+
+    if contador_agregado == 1:
         print("Nuevo dispositivo agregado: ")
     else:
         print("Nuevos dispositivos agregados: ")
-    for i in range(contador_agregado, 0):
-        ultimo_dispositivo = dispositivos[i]
+    for dispositivo in dispositivos[-contador_agregado:]:
         print(
-            f"ID: {ultimo_dispositivo['id']} - Nombre: {ultimo_dispositivo['nombre']} - Tipo: {ultimo_dispositivo['tipo']} - Estado: {ultimo_dispositivo['estado']}")
+            f"ID: {dispositivo['id']} - Nombre: {dispositivo['nombre']} - Tipo: {dispositivo['tipo']} - Estado: {dispositivo['estado']}")
 
-    return dispositivos
+    return
     # FRANCO
     # solicita datos al usuario y agrega un nuevo dispositivo a la lista.
     # CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
