@@ -54,9 +54,9 @@ def agregar_dispositivo(dispositivos):
             f"ID: {ultimo_dispositivo['id']} - Nombre: {ultimo_dispositivo['nombre']} - Tipo: {ultimo_dispositivo['tipo']} - Estado: {ultimo_dispositivo['estado']}")
 
     return dispositivos
-    # Franco
+    # FRANCO
     # solicita datos al usuario y agrega un nuevo dispositivo a la lista.
-    # CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
+    # CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
 
 
 def listar_dispositivos(lista_dispositivos):
@@ -91,9 +91,9 @@ def buscar_dispositivos(dispositivos):
     else:
         print(
             f"\nNo fue encontrado ningún dispositivo que coincida con el id o nombre ingresado ({valor_buscado})")
-    # Mauricio
+    # SERGIO
     # permite buscar un dispositivo por ID o nombre.
-    # #CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
+    # #CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
 
 
 def eliminar_dispositivos(dispositivos):
@@ -117,6 +117,6 @@ def eliminar_dispositivos(dispositivos):
         print("No se elimina ningun dispositivo.")
     return dispositivos
 
-    # Valentino
+    # VALENTINO
     # elimina un dispositivo existente.
-    # #CORRECCIONES: QUITAR LOS PRINT Y PONERLOS COMO DATOS DE ENTRADA
+    # #CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
