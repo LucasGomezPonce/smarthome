@@ -33,10 +33,29 @@ def iniciar_sesion(usuario, clave):
     # LUCAS
 
 
-def cambiar_rol_usuario():
+def cambiar_rol_usuario(numero_usuario):
+
+    f = open("usuarios.json", "r")
+    texto = f.read()
+    f.close()
+
+    usuarios = json.loads(texto)
+
+    pos = numero_usuario - 1
+    if 0 <= pos < len(usuarios):
+        if usuarios[pos]["rol"] == "admin":
+            usuarios[pos]["rol"] = "estandar"
+        else:
+            usuarios[pos]["rol"] = "admin"
+        f = open("usuarios.json", "w")
+        f.write(json.dumps(usuarios, indent=2))
+        f.close()
+        return True
+    else:
+        return False
+    
     # opcion valida solo para administrador, puede cambiar a usuarios estandar a administrador, se puede crear una funcion para listar a todos los usuarios, pasar datos como parametro
     #VALENTINO
-    pass
 
 
 def obtener_usuario_por_nombre():
