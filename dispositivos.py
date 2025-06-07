@@ -108,27 +108,17 @@ def buscar_dispositivos(dispositivos):
     # #CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
 
 
-def eliminar_dispositivos(dispositivos):
-    elim = input("Desea eliminar un dispositivo (SI/NO):")
-
-    if elim.lower() == "si":
-        try:
-            id_buscar = int(
-                input("Ingrese el ID del dispositivo a eliminar: "))
-            for i, dispositivo in enumerate(dispositivos):
-                if dispositivo["id"] == id_buscar:
-
-                    print(dispositivos[i])
-                    del dispositivos[i]
-                    print(f"Dispositivo eliminado")
-                    return dispositivos
-            print("No se encontro el dispositivo.")
-        except:
-            print("ERROR, el dato a ingresar debe ser numerico")
+def eliminar_dispositivos(dispositivos, eliminar, id_a_eliminar):
+    
+    if eliminar.lower() == "si":
+        for i, dispositivo in enumerate(dispositivos):
+            if dispositivo["id"] == id_a_eliminar:
+                del dispositivos[i]
+                return True  # Eliminado correctamente
+        return False  # No se encontró el dispositivo
     else:
-        print("No se elimina ningun dispositivo.")
-    return dispositivos
-
+        return False  # No se pudo eliminar
+    
     # VALENTINO
     # elimina un dispositivo existente.
     # #CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
