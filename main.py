@@ -56,15 +56,26 @@ def gestionar_dispositivos():
         elif opcion == "2":
             print("Funcion listar dispositivos\n")
             listar_dispositivos(dispositivos)
-
         elif opcion == "3":
             print("Funcion buscar dispositivo")
             buscar_dispositivos(dispositivos)
         elif opcion == "4":
             print("Funcion eliminar dispositivo")
-            eliminar_dispositivos(dispositivos)
+            eliminar = input("¿Desea eliminar un dispositivo? (SI/NO): ")
+            if eliminar.lower() == "si":
+                try:
+                    id_a_eliminar = int(input("Ingrese el ID del dispositivo a eliminar: "))
+                    resultado = eliminar_dispositivos(dispositivos, eliminar, id_a_eliminar)
+                    if resultado:
+                        print("Dispositivo eliminado correctamente.")
+                    else:
+                        print("No se encontró el dispositivo.")
+                except:
+                    print("ERROR, el dato a ingresar debe ser numérico")
+            else:
+                print("No se elimina ningún dispositivo.")
         elif opcion == "5":
-            gestion_administrador()
+            break
         else:
             print("Opcion inorrecta")
 
@@ -97,8 +108,23 @@ def gestion_administrador():
         elif opcion == "2":
             gestionar_automatizacion()
         elif opcion == "3":
-            # completar
-            cambiar_rol_usuario()
+            try:
+                with open("usuarios.json", "r") as f:
+                    usuarios = json.load(f)
+                print("\n--- LISTA DE USUARIOS ---")
+                for i, u in enumerate(usuarios):
+                    print(f"{i+1}. {u['usuario']} ({u['rol']})")
+                num = input("Ingrese el número de usuario para cambiar el rol: ")
+                if num.isdigit():
+                    resultado = cambiar_rol_usuario(int(num))
+                    if resultado:
+                        print("Rol cambiado correctamente.")
+                    else:
+                        print("Opción inválida.")
+                else:
+                    print("Opción inválida.")
+            except Exception as e:
+                print("Error al acceder a los usuarios:", e)
         elif opcion == "4":
             print("Se cerro sesión")
             menu()
