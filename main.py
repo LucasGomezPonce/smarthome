@@ -60,7 +60,15 @@ def gestionar_dispositivos():
             listar_dispositivos(dispositivos)
         elif opcion == "3":
             print("Funcion buscar dispositivo")
-            buscar_dispositivos(dispositivos)
+            valor_buscado = ""
+            while len(valor_buscado) == 0:
+                valor_buscado = input("\nIngrese el id o nombre del dispositivo a buscar(No puede estar vacio): ").strip()
+            resultado_busqueda=buscar_dispositivos(valor_buscado)
+            if resultado_busqueda:
+                print("\n-----Dispositivo Encontrado-----")
+                print(f"ID: {resultado_busqueda['id']} - Nombre: {resultado_busqueda['nombre']} - Tipo: {resultado_busqueda['tipo']} - Estado: {resultado_busqueda['estado']}")
+            else:
+                print(f"\nNo fue encontrado ningún dispositivo que coincida con el id o nombre ingresado ({valor_buscado})")
         elif opcion == "4":
             print("Funcion eliminar dispositivo")
             eliminar = input("¿Desea eliminar un dispositivo? (SI/NO): ")

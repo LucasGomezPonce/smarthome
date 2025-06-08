@@ -1,5 +1,5 @@
 from utils import generar_id_dispositivo
-
+from lista_dispositivos import dispositivos
 def menu_agregar_dispositivo():
     
     nombre = input("Ingrese el nombre del nuevo dispositivo: ").lower().strip()
@@ -81,28 +81,13 @@ def listar_dispositivos(lista_dispositivos):
                 f"ID: {dispositivo['id']} - Nombre: {dispositivo['nombre']} - Tipo: {dispositivo['tipo']} - Estado: {dispositivo['estado']}")
 
 
-def buscar_dispositivos(dispositivos):
-    valor_buscado = ""
-    while len(valor_buscado) == 0:
-        valor_buscado = input(
-            "\nIngrese el id o nombre del dispositivo a buscar: ").strip()
-    se_encontro = False
-
+def buscar_dispositivos(valor_buscado):
     for dispositivo in dispositivos:
         if dispositivo["nombre"].lower() == valor_buscado.lower():
-            se_encontro = True
-            break
+            return dispositivo
         elif valor_buscado.isdigit() and int(dispositivo["id"]) == int(valor_buscado):
-            se_encontro = True
-            break
-
-    if se_encontro:
-        print("\n-----Dispositivo Encontrado-----")
-        print(
-            f"ID: {dispositivo['id']} - Nombre: {dispositivo['nombre']} - Tipo: {dispositivo['tipo']} - Estado: {dispositivo['estado']}")
-    else:
-        print(
-            f"\nNo fue encontrado ningún dispositivo que coincida con el id o nombre ingresado ({valor_buscado})")
+            return dispositivo
+    return None
     # SERGIO
     # permite buscar un dispositivo por ID o nombre.
     # #CORRECCIONES: QUITAR LOS PRINT E INPUT Y PONERLOS COMO DATOS DE ENTRADA O PARAMETROS
