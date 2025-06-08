@@ -2,6 +2,8 @@ from dispositivos import listar_dispositivos, eliminar_dispositivos, agregar_dis
 from automatizacion import activar_modo_ahorro, reglas_de_automatizacion
 from lista_dispositivos import *
 from usuarios import cambiar_rol_usuario, registrar_usuario, iniciar_sesion, obtener_usuario_por_nombre
+from utils import imprimir_valores
+from claves import claves_usuarios
 import json
 import os
 
@@ -75,6 +77,7 @@ def gestionar_dispositivos():
             else:
                 print("No se elimina ningún dispositivo.")
         elif opcion == "5":
+            gestion_administrador()
             break
         else:
             print("Opcion inorrecta")
@@ -132,13 +135,14 @@ def gestion_administrador():
             print("Opcion inorrecta")
 
 
-def gestion_estandar():
+def gestion_estandar(usuario):
     while True:
         mostrar_menu_estandar()
         opcion = input("Seleccione una opcion: ")
         if opcion == "1":
-            obtener_usuario_por_nombre()
-            # completar
+            datos_usuario = obtener_usuario_por_nombre(usuario,'usuario', None)
+            print("\n--- DATOS PERSONALES ---")
+            imprimir_valores(datos_usuario, claves_usuarios )
         elif opcion == "2":
             activar_modo_ahorro(dispositivos)
         elif opcion == "3":
@@ -184,7 +188,7 @@ def menu():
                 if sesion["rol"] == "admin":
                     gestion_administrador()
                 else:
-                    gestion_estandar()
+                    gestion_estandar(usuario)
             else:
                 print("Usuario o contraseña incorrectos.")
         elif opcion == "3":

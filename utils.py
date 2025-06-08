@@ -15,3 +15,10 @@ def filtrar_lista(lista, clave, valor):
             lista_filtrada.append(dispositivo["nombre"])
         contador += 1
     return lista_filtrada
+
+def imprimir_valores (directorio, claves=None):
+    #imprime los valores de un directorio con sus claves en forma de lista
+    for clave in claves:
+        if clave in directorio:
+            valor = directorio[clave]
+        print(f"- {clave.capitalize():<10}: {valor}")

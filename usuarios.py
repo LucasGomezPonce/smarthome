@@ -57,8 +57,22 @@ def cambiar_rol_usuario(numero_usuario):
     # opcion valida solo para administrador, puede cambiar a usuarios estandar a administrador, se puede crear una funcion para listar a todos los usuarios, pasar datos como parametro
     #VALENTINO
 
+def obtener_usuario_por_nombre(nombre_usuario ,identificador, datos_a_mostrar):
+        
+    with open("usuarios.json", "r") as f:
+        usuarios = json.load(f)
+    if identificador in ['nombre','usuario']:
+        usuario = next((usuario for usuario in usuarios if usuario[identificador] == nombre_usuario), "Usuario no encontrado")
 
-def obtener_usuario_por_nombre():
+    if usuario and datos_a_mostrar:
+
+        usuario_filtrado = {dato: usuario[dato] for dato in datos_a_mostrar if dato in usuario}
+        return usuario_filtrado
+    else:
+        return usuario  # Devuelve el usuario completo si no se especifican campos
+    
     # muestra datos del usuario, pasar datos como parametro
     #OCTAVIO
-    pass
+
+if __name__ == "__main__":
+   print(obtener_usuario_por_nombre("lucas gomez ponce",'nombre', {'usuario'}))

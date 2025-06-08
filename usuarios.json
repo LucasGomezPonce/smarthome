@@ -4,5 +4,11 @@
     "usuario": "lucas",
     "clave": "admin",
     "rol": "admin"
+  },
+  {
+    "nombre": "\"octavio Javier Vallejos\"",
+    "usuario": "\"Octavio\"",
+    "clave": "\"estandar\"",
+    "rol": "estandar"
   }
 ]
