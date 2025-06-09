@@ -10,7 +10,7 @@ Este proyecto es una simulación de un sistema para la gestión de dispositivos 
 - Diseña e implementa un menú interactivo para que el usuario pueda acceder a las diferentes funciones del sistema.
 - Muestra en pantalla todos los dispositivos registrados en una lista de diccionarios, incluyendo sus detalles.
 
-# Segunda etapa:
+#### Segunda etapa:
 - Inplementar un	Sistema de registro e inicio de sesión haciendo uso de un archivo json
 
 ### 🔹 Franco – Agregar dispositivos y generar ID
@@ -18,7 +18,7 @@ Este proyecto es una simulación de un sistema para la gestión de dispositivos 
 - Cada dispositivo debe tener un identificador único (ID) autogenerado.
 - Los datos se almacenan como diccionarios dentro de una lista general de dispositivos.
 
-# Segunda etapa:
+#### Segunda etapa:
 - Aplicar pequeñas correciones al codigo
 
 ### 🔹 Sergio Mauricio – Búsqueda por ID o nombre
@@ -27,7 +27,7 @@ Este proyecto es una simulación de un sistema para la gestión de dispositivos 
   - Su nombre
 - Devuelve los datos del dispositivo encontrado o un mensaje de error si no existe.
 
-# Segunda etapa:
+#### Segunda etapa:
 - Aplicar pequeñas correciones al codigo
 
 ### 🔹 Valentino – Eliminación de dispositivos
@@ -36,14 +36,14 @@ Este proyecto es una simulación de un sistema para la gestión de dispositivos 
   - Su nombre
 - Confirma la eliminación o informa si no se encontró el dispositivo.
 
-# Segunda etapa:
+#### Segunda etapa:
 - Aplicar pequeñas correciones al codigo + realizar la funcion cambiar_rol_usuario
 
 ### 🔹 Octavio – Modo Ahorro de Energía
 - Desarrolla la automatización que apaga automáticamente todos los dispositivos no esenciales cuando se activa el “Modo Ahorro”.
 - Puede trabajar con un atributo adicional dentro del diccionario para marcar dispositivos como esenciales o no.
 
-# Segunda etapa:
+#### Segunda etapa:
 - Aplicar pequeñas correciones al codigo + mostrar datos del usuario mediante la funcion obtener_usuario_por_nombre
 ---
 
